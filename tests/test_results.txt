@@ -1,0 +1,7 @@
+QA TEST RAPORU - 25.01.2026
+
+[TC-01] Personel Doğrulama: BAŞARILI (PASS)
+Gözlem: Terminal sorgusunda Hakan 'Depo', Leyla 'Muhasebe' olarak başarıyla doğrulanmıştır.
+
+[TC-02] E-posta Kısıtlaması: BAŞARILI (PASS)
+Gözlem: Aynı e-posta ile kayıt denendiğinde sistem veri bütünlüğünü korumuş ve hata fırlatmıştır.
