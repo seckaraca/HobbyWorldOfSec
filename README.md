@@ -11,6 +11,7 @@ Bu profesyonel proje şu teknolojileri içermektedir:
 * **DevOps & CI/CD:** Jenkins ile sürekli entegrasyon ve dağıtım süreçleri.
 * **Containerize Uygulamalar:** Docker ve Docker-Compose ile ölçeklenebilir altyapı.
 * **Depolama:** Harici harddisk projesini de kapsayan veri yönetimi.
+* **Kalite Yönetimi:** Web sitesinin ve veri yapılarının kapsamlı test ve kalite süreçlerini içermektedir.
 
 ---
 *Bu proje Seckin Karaca'nın profesyonel iş girişimidir.*
