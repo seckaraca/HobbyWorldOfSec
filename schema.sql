@@ -46,3 +46,35 @@ ON CONFLICT (email) DO NOTHING;
 -- 3. KONTROL SORGUSU
 -- ==========================================
 SELECT * FROM employees;
+
+-- 1. ÜRÜNLER TABLOSU
+CREATE TABLE IF NOT EXISTS products (
+    product_id SERIAL PRIMARY KEY,
+    product_name VARCHAR(100) NOT NULL,
+    category VARCHAR(50), 
+    price DECIMAL(10, 2) NOT NULL,
+    current_stock INT DEFAULT 0
+);
+
+-- 2. ENVANTER HAREKETLERİ (Üstteki employee_id ismine göre düzelttim)
+CREATE TABLE IF NOT EXISTS inventory_logs (
+    log_id SERIAL PRIMARY KEY,
+    product_id INT REFERENCES products(product_id),
+    employee_id INT REFERENCES employees(employee_id), -- 'id' değil 'employee_id' yaptık
+    change_amount INT NOT NULL,
+    movement_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 3. MUHASEBE KAYITLARI (Üstteki employee_id ismine göre düzelttim)
+CREATE TABLE IF NOT EXISTS accounting_records (
+    record_id SERIAL PRIMARY KEY,
+    log_id INT REFERENCES inventory_logs(log_id),
+    accountant_id INT REFERENCES employees(employee_id), -- 'id' değil 'employee_id' yaptık
+    total_amount DECIMAL(15, 2),
+    record_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 4. ADMIN EKLEME (Üstteki kolon isimlerine göre düzelttim)
+INSERT INTO employees (first_name, last_name, email, department, salary) 
+SELECT 'Seckin', 'Admin', 'admin@hobbyworld.com', 'Owner', 0
+WHERE NOT EXISTS (SELECT 1 FROM employees WHERE email = 'admin@hobbyworld.com');
