@@ -1,0 +1,25 @@
+          rapor           
+--------------------------
+ TEST 1: Personel Listesi
+(1 row)
+
+                 rapor                  
+----------------------------------------
+ TEST 2: Kritik Stok Kontrolü (10 altı)
+(1 row)
+
+                rapor                
+-------------------------------------
+ TEST 3: Stok ve Muhasebe Mutabakatı
+(1 row)
+
+             rapor              
+--------------------------------
+ TEST 4: Sistem Sağlık Taraması
+(1 row)
+
+ toplam_urun | toplam_personel | toplam_islem 
+-------------+-----------------+--------------
+           0 |               3 |            0
+(1 row)
+
